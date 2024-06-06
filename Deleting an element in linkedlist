@@ -1,0 +1,60 @@
+import java.util.*;
+class Main
+{
+  class Node{
+    int data;
+    Node next;
+    Node(int a){
+      this.data=a;
+      this.next=null;
+    }}
+    Node head=null;
+    Node temp=null;
+  
+   void ins(int a){
+     Node nn=new Node(a);
+     if(head==null){
+       
+     head=nn;
+     temp=nn;
+     }
+     else{
+       temp.next=nn;
+       temp=nn;
+     }
+   }
+     void del(){
+       head=head.next;
+     }
+     
+     void print(){
+       temp=head;
+       while(temp!=null){
+         System.out.println(temp.data);
+         temp=temp.next;
+       }
+     }
+       
+       
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    Main o=new Main();
+    while(true){
+      int a=sc.nextInt();
+      if(a>0){
+        o.ins(a);
+        
+    
+      }
+      
+      
+      else{
+        break;
+      }
+  }
+    o.del();
+    o.print();
+    
+}
+   }
