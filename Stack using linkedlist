@@ -1,0 +1,49 @@
+import java.util.*;
+class Main
+{
+  class Node{
+    int data;
+    Node next;
+    Node(int n){
+      this.data=n;
+      this.next=null;
+    }
+  }
+  Node top=null;
+  void push(int n){
+    Node nn=new Node(n);
+    if(top==null){
+      top=nn;
+    }
+    else{
+      nn.next=top;
+      top=nn;
+    }
+  }
+  
+  void print(){
+    Node temp=top;
+    while(temp!=null){
+    System.out.print(temp.data+" ");
+    temp=temp.next;
+    }
+  }
+    
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    Main o=new Main();
+    while(true){
+      int n=sc.nextInt();
+      if(n>0){
+        o.push(n);
+      }
+      else{
+        break;
+      }
+    }
+    o.print();
+        
+        
+  }
+}
