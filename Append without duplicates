@@ -1,0 +1,68 @@
+import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+class Main
+{
+  class Node{
+    int data;
+    Node next;
+    Node(int a){
+      this.data=a;
+      this.next=null;
+    }
+  }
+  Node head=null;
+  Node head1=null;
+  void ins(int a)
+  {
+    Node nn=new Node(a);
+    if(head==null) 
+    {
+      head=nn;
+      return;
+    }
+    head1=head;
+    while(head1!=null){
+      if(head1.data==nn.data)
+      {
+        return;
+      }
+      if(head1.next==null)   
+      {
+        break;
+      }
+    head1=head1.next;
+      
+  }
+    head1.next=nn;
+  }
+  
+void print(){
+          head1=head;
+  if(head1==null) 
+    System.out.println("List is empty");
+          while(head1!=null){
+            System.out.println(head1.data);
+            head1=head1.next;
+          }
+        }
+     
+    
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    Main o=new Main();
+
+    while(true){
+      int a=sc.nextInt();
+      if(a>0){
+        o.ins(a);
+      }
+      else{
+        break;
+      }
+    }
+    o.print();
+        
+  }
+}
